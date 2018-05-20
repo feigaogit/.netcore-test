@@ -13338,11 +13338,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\练习\\.net core\\CoreApi\\CoreApi\\CoreApi.csproj",
+      "projectUniqueName": "E:\\练习\\.net core\\CoreApi\\.netcore-test\\CoreApi\\CoreApi.csproj",
       "projectName": "CoreApi",
-      "projectPath": "E:\\练习\\.net core\\CoreApi\\CoreApi\\CoreApi.csproj",
+      "projectPath": "E:\\练习\\.net core\\CoreApi\\.netcore-test\\CoreApi\\CoreApi.csproj",
       "packagesPath": "C:\\Users\\12937\\.nuget\\packages\\",
-      "outputPath": "E:\\练习\\.net core\\CoreApi\\CoreApi\\obj\\",
+      "outputPath": "E:\\练习\\.net core\\CoreApi\\.netcore-test\\CoreApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
