@@ -1,0 +1,15 @@
+2018-05-20 23:46:08.9404|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-20 23:46:09.5108|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 622.7958ms 404 text/plain
+2018-05-20 23:46:09.5807|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/favicon.ico  
+2018-05-20 23:46:09.5899|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.5546ms 404 text/plain
+2018-05-20 23:46:17.7550|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 PATCH http://localhost:62031/api/product/1 application/json 61
+2018-05-20 23:46:18.1704|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Patch (CoreApi) with arguments (1, Microsoft.AspNetCore.JsonPatch.JsonPatchDocument`1[CoreApi.Dtos.ProductModification]) - ModelState is Valid
+2018-05-20 23:46:18.2408|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-20 23:46:18.2765|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Patch (CoreApi) in 340.55ms
+2018-05-20 23:46:18.3098|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 553.8517ms 204 
+2018-05-20 23:46:24.3488|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/1  
+2018-05-20 23:46:24.3796|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Get (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-20 23:46:24.4945|FATAL|CoreApi.Controllers.ProductController|查找Id为1的产品时出现了错误!!
+2018-05-20 23:46:24.5405|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-05-20 23:46:24.5847|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Get (CoreApi) in 196.2157ms
+2018-05-20 23:46:24.6100|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 259.8663ms 500 text/plain; charset=utf-8

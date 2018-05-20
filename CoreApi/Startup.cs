@@ -32,7 +32,7 @@ namespace CoreApi
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
         {
             //针对LoggerFactory.AddProvider()这种写法，Nlog一个简单的ExtensionMethod做了这个工作，就是AddNlog();
-            // loggerFactory.AddProvider(new NLogLoggerProvider());sss
+            // loggerFactory.AddProvider(new NLogLoggerProvider());s
             loggerFactory.AddNLog();
 
             if (env.IsDevelopment())

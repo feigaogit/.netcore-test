@@ -9,3 +9,15 @@ E:\练习\.net core\CoreApi\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.AssemblyInfo
 E:\练习\.net core\CoreApi\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.AssemblyInfo.cs
 E:\练习\.net core\CoreApi\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.dll
 E:\练习\.net core\CoreApi\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.pdb
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\nlog.config
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\CoreApi.deps.json
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\CoreApi.runtimeconfig.json
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\CoreApi.runtimeconfig.dev.json
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\CoreApi.dll
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\bin\Debug\netcoreapp2.0\CoreApi.pdb
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.csprojResolveAssemblyReference.cache
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.csproj.CoreCompileInputs.cache
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.AssemblyInfoInputs.cache
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.AssemblyInfo.cs
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.dll
+E:\练习\.net core\CoreApi\.netcore-test\CoreApi\obj\Debug\netcoreapp2.0\CoreApi.pdb
