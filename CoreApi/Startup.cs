@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NLog.Extensions.Logging;
 
@@ -12,11 +14,24 @@ namespace CoreApi
 {
     public class Startup
     {
+        public static IConfiguration Configuration { get; private set; }
+
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc();// 注册MVC到Container
+#if DEBUG
+            services.AddTransient<IMailService, LocalMailService>();
+#else
+
+            services.AddTransient<IMailService, CloudMailService>();
+#endif
 
             ////core默认使用json.net对结果默认做了camel case的转化(大概可理解为首字母小写)，这句话会去除默认转换
             //services.AddMvc().AddJsonOptions(options =>

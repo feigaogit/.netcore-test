@@ -1,0 +1,28 @@
+2018-05-21 21:20:34.3158|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:20:34.7952|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 524.5429ms 404 text/plain
+2018-05-21 21:20:39.2446|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:20:39.4763|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:20:39.5146|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:20:39.5553|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 167.7567ms
+2018-05-21 21:20:39.5827|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 338.6624ms 204 
+2018-05-21 21:21:00.1073|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:21:00.1432|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:21:00.1714|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-05-21 21:21:00.1972|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 61.9412ms
+2018-05-21 21:21:00.1972|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 114.2571ms 404 text/plain
+2018-05-21 21:23:16.9043|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:23:17.3545|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 501.0352ms 404 text/plain
+2018-05-21 21:23:22.3671|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:23:22.6047|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:23:22.6470|INFO|CoreApi.Services.CloudMailService|从noreply@alibaba.com给admin@qq.com通过LocalMailService发送了邮件
+2018-05-21 21:23:22.6828|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:23:22.7184|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 209.1788ms
+2018-05-21 21:23:22.7498|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 379.264ms 204 
+2018-05-21 21:23:49.4688|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:23:49.8808|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 493.6302ms 404 text/plain
+2018-05-21 21:24:01.4653|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:24:01.7085|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:24:01.7464|INFO|CoreApi.Services.CloudMailService|从noreply@alibaba.com给admin@qq.com通过CloudMailService发送了邮件
+2018-05-21 21:24:01.8080|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:24:01.8485|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 227.2829ms
+2018-05-21 21:24:01.8821|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 412.9915ms 204 

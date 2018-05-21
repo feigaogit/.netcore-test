@@ -1,0 +1,23 @@
+2018-05-21 21:13:50.7338|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:13:51.1750|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 484.6931ms 404 text/plain
+2018-05-21 21:13:56.8391|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:13:57.0699|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:14:08.6060|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:14:08.6420|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 11659.6364ms
+2018-05-21 21:14:08.6693|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 11831.0707ms 204 
+2018-05-21 21:20:13.5934|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:20:14.0237|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 494.4053ms 404 text/plain
+2018-05-21 21:20:19.8153|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:20:20.0621|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:20:20.1053|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:20:20.1414|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 167.4568ms
+2018-05-21 21:20:20.1709|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 354.5849ms 204 
+2018-05-21 21:23:06.9386|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 21:23:07.4782|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 600.427ms 404 text/plain
+2018-05-21 21:38:57.4098|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 DELETE http://localhost:62031/api/product/1  0
+2018-05-21 21:38:58.0427|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.Delete (CoreApi) with arguments (1) - ModelState is Valid
+2018-05-21 21:38:58.0837|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 204
+2018-05-21 21:38:58.1193|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.Delete (CoreApi) in 186.5363ms
+2018-05-21 21:38:58.2016|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 862.2098ms 204 
+2018-05-21 22:00:58.3142|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-21 22:00:58.6234|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 344.6863ms 404 text/plain

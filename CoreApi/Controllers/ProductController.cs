@@ -14,10 +14,12 @@ namespace CoreApi.Controllers
     public class ProductController : Controller
     {
         private ILogger<ProductController> _logger;
+        private readonly IMailService _localMailService;
 
-        public ProductController(ILogger<ProductController> logger)
+        public ProductController(ILogger<ProductController> logger, IMailService localMailService)
         {
-            _logger = logger;
+            this._logger = logger;
+            this._localMailService = localMailService;
         }
 
         [HttpGet]
@@ -178,6 +180,8 @@ namespace CoreApi.Controllers
             }
 
             ProductService.Current().Products.Remove(model);
+
+            _localMailService.Send("Product Deleted", $"Id为{id}的产品被删除了");
 
             return NoContent();
         }
