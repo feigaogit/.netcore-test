@@ -1,0 +1,21 @@
+2018-05-23 00:10:11.4574|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-23 00:10:11.9293|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 519.4992ms 404 text/plain
+2018-05-23 00:10:12.0202|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/favicon.ico  
+2018-05-23 00:10:12.0467|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 27.7554ms 404 text/plain
+2018-05-23 00:10:21.0220|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/test  
+2018-05-23 00:10:21.7235|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-23 00:10:32.1475|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+CREATE DATABASE [ProductDB];
+2018-05-23 00:10:32.2265|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (49ms) [Parameters=[], CommandType='Text', CommandTimeout='60']
+IF SERVERPROPERTY('EngineEdition') <> 5 EXEC(N'ALTER DATABASE [ProductDB] SET READ_COMMITTED_SNAPSHOT ON;');
+2018-05-23 00:10:32.3683|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+CREATE TABLE [Products] (
+    [Id] int NOT NULL IDENTITY,
+    [Name] nvarchar(max) NULL,
+    [Price] real NOT NULL,
+    CONSTRAINT [PK_Products] PRIMARY KEY ([Id])
+);
+2018-05-23 00:11:03.5676|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.TestController.Get (CoreApi) with arguments ((null)) - ModelState is Valid
+2018-05-23 00:11:03.6030|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 200
+2018-05-23 00:11:03.6431|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.TestController.Get (CoreApi) in 42479.9982ms
+2018-05-23 00:11:03.6568|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 42657.4434ms 200 

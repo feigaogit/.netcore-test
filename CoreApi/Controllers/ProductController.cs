@@ -35,7 +35,7 @@ namespace CoreApi.Controllers
             try
             {
                 throw new Exception("来个异常！");
-                Product product = ProductService.Current().Products.SingleOrDefault(t => t.Id == id);
+                ProductDto product = ProductService.Current().Products.SingleOrDefault(t => t.Id == id);
                 if (product == null)
                 {
                     _logger.LogInformation($"id为{id}的产品没有被找到..");
@@ -75,7 +75,7 @@ namespace CoreApi.Controllers
             //获取目前存在的最大id
             var maxId = ProductService.Current().Products.Max(t => t.Id);
 
-            var newProduct = new Product
+            var newProduct = new ProductDto
             {
                 Id = ++maxId,
                 Name = product.Name,
