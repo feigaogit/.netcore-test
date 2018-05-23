@@ -18,7 +18,8 @@ namespace CoreApi.Entities
         public MyContext(DbContextOptions<MyContext> options)
             : base(options)
         {
-            Database.EnsureCreated();
+            //==命令 Update-Database，将更改有效的应用于数据库
+            Database.Migrate();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
