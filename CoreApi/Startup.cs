@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreApi.Entities;
 using CoreApi.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -49,7 +50,7 @@ namespace CoreApi
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, Microsoft.Extensions.Logging.ILoggerFactory loggerFactory, MyContext myContext)
         {
             //针对LoggerFactory.AddProvider()这种写法，Nlog一个简单的ExtensionMethod做了这个工作，就是AddNlog();
             // loggerFactory.AddProvider(new NLogLoggerProvider());s
@@ -64,6 +65,8 @@ namespace CoreApi
                 //处理异常
                 app.UseExceptionHandler();
             }
+
+            myContext.EnsureSeedDataForContext();
 
             //对404等状态返回友好提示
             app.UseStatusCodePages();
