@@ -5,12 +5,11 @@ using System.Threading.Tasks;
 
 namespace CoreApi.Entities
 {
-    public class Product
+    public class Material
     {
         public int Id { get; set; }
+        public int ProductId { get; set; }
         public string Name { get; set; }
-        public float Price { get; set; }
-        public string Description { get; set; }
-        public ICollection<Material> Materials { get; set; }
+        public Product Product { get; set; }
     }
 }

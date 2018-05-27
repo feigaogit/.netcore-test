@@ -9,6 +9,7 @@ namespace CoreApi.Entities
     public class MyContext : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Material> Materials { get; set; }
 
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
@@ -25,6 +26,7 @@ namespace CoreApi.Entities
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new ProductConfiguration());
+            modelBuilder.ApplyConfiguration(new MaterialConfiguration());
         }
     }
 }
