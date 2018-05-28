@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using CoreApi.Dtos;
+using CoreApi.Repositories;
 using CoreApi.Services;
 using Microsoft.AspNetCore.JsonPatch;
 using Microsoft.AspNetCore.Mvc;
@@ -15,40 +16,74 @@ namespace CoreApi.Controllers
     {
         private ILogger<ProductController> _logger;
         private readonly IMailService _localMailService;
+        private readonly IProductRepository _productRepository;
 
-        public ProductController(ILogger<ProductController> logger, IMailService localMailService)
+        public ProductController(ILogger<ProductController> logger, IMailService localMailService, IProductRepository productRepository)
         {
             this._logger = logger;
             this._localMailService = localMailService;
+            this._productRepository = productRepository;
         }
 
         [HttpGet]
-        public IActionResult Get()
+        public IActionResult GetProducts()
         {
-            return Ok(ProductService.Current().Products);
+            var products = _productRepository.GetProducts();
+            var results = new List<ProductWithoutMaterialDto>();
+            foreach (var product in products)
+            {
+                results.Add(new ProductWithoutMaterialDto
+                {
+                    Id = product.Id,
+                    Name = product.Name,
+                    Price = product.Price,
+                    Description = product.Description
+                });
+            }
+
+            return Ok(results);
         }
 
         [HttpGet]
         [Route("{id}", Name = "GetProduct")]
-        public IActionResult Get(int id)
+        public IActionResult GetProduct(int id, bool includeMaterial = false)
         {
-            try
+            var product = _productRepository.GetProduct(id, includeMaterial);
+            if (product == null)
             {
-                throw new Exception("来个异常！");
-                ProductDto product = ProductService.Current().Products.SingleOrDefault(t => t.Id == id);
-                if (product == null)
+                return NotFound();
+            }
+
+            if (includeMaterial)
+            {
+                var productWithMaterialResult = new ProductDto
                 {
-                    _logger.LogInformation($"id为{id}的产品没有被找到..");
-                    return NotFound();
+                    Id = product.Id,
+                    Name = product.Name,
+                    Price = product.Price,
+                    Description = product.Description
+                };
+
+                foreach (var material in product.Materials)
+                {
+                    productWithMaterialResult.Materials.Add(new MaterialDto
+                    {
+                        Id = material.Id,
+                        Name = material.Name
+                    });
                 }
 
-                return Ok(product);
+                return Ok(productWithMaterialResult);
             }
-            catch (Exception ex)
+
+            var onlyProductResult = new ProductDto
             {
-                _logger.LogCritical($"查找Id为{id}的产品时出现了错误!!", ex);
-                return StatusCode(500, "处理请求的时候发生了错误！");
-            }
+                Id = product.Id,
+                Name = product.Name,
+                Price = product.Price,
+                Description = product.Description
+            };
+            return Ok(onlyProductResult);
         }
 
         [HttpPost]

@@ -1,0 +1,249 @@
+2018-05-28 23:10:27.1144|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-05-28 23:10:27.9581|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-28 23:10:28.3265|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 426.4457ms 404 text/plain
+2018-05-28 23:10:28.4402|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/favicon.ico  
+2018-05-28 23:10:28.4488|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 29.6165ms 404 text/plain
+2018-05-28 23:10:43.8873|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product  
+2018-05-28 23:10:44.0688|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:10:44.1001|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:10:44.1293|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:10:44.1717|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:10:44.2031|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:10:44.2862|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProducts (CoreApi) with arguments ((null)) - ModelState is Valid
+2018-05-28 23:10:44.4482|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+ORDER BY [t].[Name]
+2018-05-28 23:10:44.6999|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred in the database while iterating the results of a query for context type 'CoreApi.Entities.MyContext'.
+System.InvalidOperationException: An exception occurred while reading a database value for property 'Product.Price'. The expected type was 'System.Single' but the actual value was of type 'System.Decimal'. ---> System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Single'.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-05-28 23:10:53.3883|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProducts (CoreApi) in 9336.9265ms
+2018-05-28 23:10:53.4990|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request
+2018-05-28 23:10:53.7317|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 9839.1864ms 500 text/html; charset=utf-8
+2018-05-28 23:11:17.8097|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product  
+2018-05-28 23:11:17.8260|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:11:17.8687|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:11:17.9001|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:11:17.9331|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:11:17.9588|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:11:17.9830|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProducts (CoreApi) with arguments ((null)) - ModelState is Valid
+2018-05-28 23:11:18.0185|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+ORDER BY [t].[Name]
+2018-05-28 23:11:18.0741|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred in the database while iterating the results of a query for context type 'CoreApi.Entities.MyContext'.
+System.InvalidOperationException: An exception occurred while reading a database value for property 'Product.Price'. The expected type was 'System.Single' but the actual value was of type 'System.Decimal'. ---> System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Single'.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-05-28 23:11:21.0522|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProducts (CoreApi) in 3234.3276ms
+2018-05-28 23:11:21.1461|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request
+2018-05-28 23:11:21.2324|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 3442.4832ms 500 text/html; charset=utf-8
+2018-05-28 23:11:46.9828|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product  
+2018-05-28 23:11:47.0075|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:11:47.0362|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:11:47.0620|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:11:47.0869|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:11:47.1275|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:12:13.4227|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProducts (CoreApi) with arguments ((null)) - ModelState is Valid
+2018-05-28 23:12:14.9321|WARN|Microsoft.AspNetCore.Server.Kestrel|Heartbeat took longer than "00:00:01" at "05/28/2018 15:12:13 +00:00".
+2018-05-28 23:12:14.9599|WARN|Microsoft.AspNetCore.Server.Kestrel|Heartbeat took longer than "00:00:01" at "05/28/2018 15:12:14 +00:00".
+2018-05-28 23:12:14.9912|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+ORDER BY [t].[Name]
+2018-05-28 23:12:15.0898|ERROR|Microsoft.EntityFrameworkCore.Query|An exception occurred in the database while iterating the results of a query for context type 'CoreApi.Entities.MyContext'.
+System.InvalidOperationException: An exception occurred while reading a database value for property 'Product.Price'. The expected type was 'System.Single' but the actual value was of type 'System.Decimal'. ---> System.InvalidCastException: Unable to cast object of type 'System.Decimal' to type 'System.Single'.
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.ThrowReadValueException[TValue](Exception exception, Object value, IPropertyBase property)
+   at Microsoft.EntityFrameworkCore.Metadata.Internal.EntityMaterializerSource.TryReadValue[TValue](ValueBuffer valueBuffer, Int32 index, IPropertyBase property)
+   at lambda_method(Closure , ValueBuffer )
+   at Microsoft.EntityFrameworkCore.Query.ExpressionVisitors.Internal.UnbufferedEntityShaper`1.Shape(QueryContext queryContext, ValueBuffer valueBuffer)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.BufferlessMoveNext(Boolean buffer)
+   at Microsoft.EntityFrameworkCore.Storage.Internal.SqlServerExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryingEnumerable`1.Enumerator.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.<_TrackEntities>d__17`2.MoveNext()
+   at Microsoft.EntityFrameworkCore.Query.Internal.LinqOperatorProvider.ExceptionInterceptor`1.EnumeratorExceptionInterceptor.MoveNext()
+2018-05-28 23:12:16.6803|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProducts (CoreApi) in 29692.8922ms
+2018-05-28 23:12:16.7630|ERROR|Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware|An unhandled exception has occurred while executing the request
+2018-05-28 23:12:16.8491|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 29886.8229ms 500 text/html; charset=utf-8
+2018-05-28 23:14:52.9037|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-05-28 23:14:53.5798|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product  
+2018-05-28 23:14:53.5798|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-28 23:14:53.9546|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 432.3697ms 404 text/plain
+2018-05-28 23:14:54.0352|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:14:54.0667|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:14:54.0784|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:14:54.1051|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:14:54.1309|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:14:54.2061|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProducts (CoreApi) with arguments ((null)) - ModelState is Valid
+2018-05-28 23:14:54.3129|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+ORDER BY [t].[Name]
+2018-05-28 23:14:54.4238|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-05-28 23:14:54.5483|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProducts (CoreApi) in 523.4806ms
+2018-05-28 23:14:54.5750|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1036.3689ms 200 application/json; charset=utf-8
+2018-05-28 23:26:27.9934|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-05-28 23:26:28.5818|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (143ms) [Parameters=[@p0='?' (Size = 100), @p1='?' (Size = 50), @p2='?', @p3='?' (Size = 100), @p4='?' (Size = 50), @p5='?', @p6='?' (Size = 100), @p7='?' (Size = 50), @p8='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Products] USING (
+VALUES (@p0, @p1, @p2, 0),
+(@p3, @p4, @p5, 1),
+(@p6, @p7, @p8, 2)) AS i ([Description], [Name], [Price], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Description], [Name], [Price])
+VALUES (i.[Description], i.[Name], i.[Price])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Products] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2018-05-28 23:26:28.6378|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (9ms) [Parameters=[@p9='?' (Size = 50), @p10='?', @p11='?' (Size = 50), @p12='?', @p13='?' (Size = 50), @p14='?', @p15='?' (Size = 50), @p16='?', @p17='?' (Size = 50), @p18='?', @p19='?' (Size = 50), @p20='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DECLARE @inserted0 TABLE ([Id] int, [_Position] [int]);
+MERGE [Materials] USING (
+VALUES (@p9, @p10, 0),
+(@p11, @p12, 1),
+(@p13, @p14, 2),
+(@p15, @p16, 3),
+(@p17, @p18, 4),
+(@p19, @p20, 5)) AS i ([Name], [ProductId], _Position) ON 1=0
+WHEN NOT MATCHED THEN
+INSERT ([Name], [ProductId])
+VALUES (i.[Name], i.[ProductId])
+OUTPUT INSERTED.[Id], i._Position
+INTO @inserted0;
+
+SELECT [t].[Id] FROM [Materials] t
+INNER JOIN @inserted0 i ON ([t].[Id] = [i].[Id])
+ORDER BY [i].[_Position];
+2018-05-28 23:26:29.2758|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-05-28 23:26:29.6751|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 433.6698ms 404 text/plain
+2018-05-28 23:37:42.4708|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/2  
+2018-05-28 23:37:42.6484|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:37:42.6863|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:37:42.7202|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:37:42.7507|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:37:42.7824|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:37:42.9188|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (2, False) - ModelState is Valid
+2018-05-28 23:37:43.0907|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Description], [e].[Name], [e].[Price]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-05-28 23:37:43.1427|INFO|Microsoft.AspNetCore.Mvc.StatusCodeResult|Executing HttpStatusCodeResult, setting HTTP status code 404
+2018-05-28 23:37:43.1982|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 545.5471ms
+2018-05-28 23:37:43.2377|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 757.1651ms 404 text/plain
+2018-05-28 23:37:46.3931|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/4  
+2018-05-28 23:37:46.4312|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:37:46.4612|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:37:46.5067|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:37:46.5357|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:37:46.5645|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:37:46.6002|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (4, False) - ModelState is Valid
+2018-05-28 23:37:46.6613|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Description], [e].[Name], [e].[Price]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-05-28 23:37:46.7580|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-05-28 23:37:46.8705|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 438.9269ms
+2018-05-28 23:37:46.9042|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 502.2046ms 200 application/json; charset=utf-8
+2018-05-28 23:38:10.4347|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/4?includeMaterial=true  
+2018-05-28 23:38:10.4656|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-05-28 23:38:10.4962|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:38:10.5250|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-05-28 23:38:10.5547|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-05-28 23:38:10.5805|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-05-28 23:38:10.6079|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (4, True) - ModelState is Valid
+2018-05-28 23:38:10.7951|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+WHERE [t].[Id] = @__productId_0
+ORDER BY [t].[Id]
+2018-05-28 23:38:10.8422|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (11ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t.Materials].[Id], [t.Materials].[Name], [t.Materials].[ProductId]
+FROM [Materials] AS [t.Materials]
+INNER JOIN (
+    SELECT TOP(1) [t0].[Id]
+    FROM [Products] AS [t0]
+    WHERE [t0].[Id] = @__productId_0
+    ORDER BY [t0].[Id]
+) AS [t1] ON [t.Materials].[ProductId] = [t1].[Id]
+ORDER BY [t1].[Id]
+2018-05-28 23:38:10.8724|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-05-28 23:38:10.9022|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 438.7021ms
+2018-05-28 23:38:10.9262|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 491.5154ms 200 application/json; charset=utf-8
