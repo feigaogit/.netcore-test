@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreApi.Dtos;
+using CoreApi.Repositories;
 using CoreApi.Services;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,34 +14,40 @@ namespace CoreApi.Controllers
     [Route("api/product")]
     public class MaterialController : Controller
     {
+        private readonly IProductRepository _productRepository;
+
+        public MaterialController(IProductRepository productRepository)
+        {
+            this._productRepository = productRepository;
+        }
+
         [Route("{productId}/materials")]
         public IActionResult GetMaterials(int productId)
         {
-            var product = ProductService.Current().Products.SingleOrDefault(t => t.Id == productId);
-            if (product == null)
+            var materials = _productRepository.GetMaterialsForProduct(productId);
+            var results = materials.Select(material => new MaterialDto
             {
-                return NotFound();
-            }
+                Id = material.Id,
+                Name = material.Name
+            }).ToList();
 
-            return Ok(product.Materials);
+            return Ok(results);
         }
 
         [Route("{productId}/materials/{id}")]
         public IActionResult GetMaterila(int productId, int id)
         {
-            var product = ProductService.Current().Products.SingleOrDefault(t => t.Id == productId);
-            if (product == null)
+            var material = _productRepository.GetMaterialForProduct(productId, id);
+            if (material == null)
             {
                 return NotFound();
             }
-
-            var materila = product.Materials.SingleOrDefault(t => t.Id == id);
-            if (materila == null)
+            var result = new MaterialDto
             {
-                return NotFound();
-            }
-
-            return Ok(materila);
+                Id = material.Id,
+                Name = material.Name
+            };
+            return Ok(result);
         }
     }
 }

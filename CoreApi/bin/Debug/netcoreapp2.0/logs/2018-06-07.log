@@ -1,0 +1,90 @@
+2018-06-07 23:17:35.6285|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Products] AS [p])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END
+2018-06-07 23:17:36.5321|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/  
+2018-06-07 23:17:37.0383|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 606.2407ms 404 text/plain
+2018-06-07 23:17:37.1353|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/favicon.ico  
+2018-06-07 23:17:37.1353|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 8.4211ms 404 text/plain
+2018-06-07 23:17:43.4422|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/4?includeMaterial=true  
+2018-06-07 23:17:43.6295|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-06-07 23:17:43.6378|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:43.6378|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:43.6690|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-06-07 23:17:43.6940|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-06-07 23:17:43.8030|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (4, True) - ModelState is Valid
+2018-06-07 23:17:44.1468|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (32ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+WHERE [t].[Id] = @__productId_0
+ORDER BY [t].[Id]
+2018-06-07 23:17:44.2323|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (2ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t.Materials].[Id], [t.Materials].[Name], [t.Materials].[ProductId]
+FROM [Materials] AS [t.Materials]
+INNER JOIN (
+    SELECT TOP(1) [t0].[Id]
+    FROM [Products] AS [t0]
+    WHERE [t0].[Id] = @__productId_0
+    ORDER BY [t0].[Id]
+) AS [t1] ON [t.Materials].[ProductId] = [t1].[Id]
+ORDER BY [t1].[Id]
+2018-06-07 23:17:44.3114|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-06-07 23:17:44.4712|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 847.8225ms
+2018-06-07 23:17:44.4966|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 1054.1569ms 200 application/json; charset=utf-8
+2018-06-07 23:17:49.2561|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/4  
+2018-06-07 23:17:49.2675|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-06-07 23:17:49.2932|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:49.3190|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:49.3448|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-06-07 23:17:49.3699|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-06-07 23:17:49.4014|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (4, False) - ModelState is Valid
+2018-06-07 23:17:49.4565|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[Description], [e].[Name], [e].[Price]
+FROM [Products] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+2018-06-07 23:17:49.4821|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-06-07 23:17:49.5073|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 223.162ms
+2018-06-07 23:17:49.5343|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 276.1452ms 200 application/json; charset=utf-8
+2018-06-07 23:17:52.6294|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request starting HTTP/1.1 GET http://localhost:62031/api/product/4?includeMaterial=true  
+2018-06-07 23:17:52.6554|INFO|Microsoft.EntityFrameworkCore.Infrastructure|Entity Framework Core 2.0.3-rtm-10026 initialized 'MyContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+2018-06-07 23:17:52.6821|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:52.6821|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT OBJECT_ID(N'__EFMigrationsHistory');
+2018-06-07 23:17:52.7153|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [MigrationId], [ProductVersion]
+FROM [__EFMigrationsHistory]
+ORDER BY [MigrationId];
+2018-06-07 23:17:52.7402|INFO|Microsoft.EntityFrameworkCore.Migrations|No migrations were applied. The database is already up to date.
+2018-06-07 23:17:52.7695|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executing action method CoreApi.Controllers.ProductController.GetProduct (CoreApi) with arguments (4, True) - ModelState is Valid
+2018-06-07 23:17:52.8122|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [t].[Id], [t].[Description], [t].[Name], [t].[Price]
+FROM [Products] AS [t]
+WHERE [t].[Id] = @__productId_0
+ORDER BY [t].[Id]
+2018-06-07 23:17:52.8401|INFO|Microsoft.EntityFrameworkCore.Database.Command|Executed DbCommand (0ms) [Parameters=[@__productId_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [t.Materials].[Id], [t.Materials].[Name], [t.Materials].[ProductId]
+FROM [Materials] AS [t.Materials]
+INNER JOIN (
+    SELECT TOP(1) [t0].[Id]
+    FROM [Products] AS [t0]
+    WHERE [t0].[Id] = @__productId_0
+    ORDER BY [t0].[Id]
+) AS [t1] ON [t.Materials].[ProductId] = [t1].[Id]
+ORDER BY [t1].[Id]
+2018-06-07 23:17:52.8675|INFO|Microsoft.AspNetCore.Mvc.Internal.ObjectResultExecutor|Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext.
+2018-06-07 23:17:52.8993|INFO|Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker|Executed action CoreApi.Controllers.ProductController.GetProduct (CoreApi) in 238.4817ms
+2018-06-07 23:17:52.9314|INFO|Microsoft.AspNetCore.Hosting.Internal.WebHost|Request finished in 295.628ms 200 application/json; charset=utf-8
