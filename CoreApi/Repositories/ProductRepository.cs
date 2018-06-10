@@ -16,7 +16,6 @@ namespace CoreApi.Repositories
             _myContext = myContext;
         }
 
-
         public Material GetMaterialForProduct(int productId, int materialId)
         {
             return _myContext.Materials.FirstOrDefault(x => x.ProductId == productId && x.Id == materialId);
@@ -27,7 +26,7 @@ namespace CoreApi.Repositories
             return _myContext.Materials.Where(x => x.ProductId == productId).ToList();
         }
 
-        public Product GetProduct(int productId, bool includeMaterials)
+        public Product GetProduct(int productId, bool includeMaterials = false)
         {
             if (includeMaterials)
             {
@@ -40,6 +39,38 @@ namespace CoreApi.Repositories
         public IEnumerable<Product> GetProducts()
         {
             return _myContext.Products.OrderBy(t => t.Name).ToList();
+        }
+
+        /// <summary>
+        /// 产品是否存在
+        /// </summary>
+        /// <param name="productID"></param>
+        /// <returns></returns>
+        public bool ProductExist(int productID)
+        {
+            return _myContext.Products.Any(x => x.Id == productID);
+        }
+
+        /// <summary>
+        /// 添加
+        /// </summary>
+        /// <param name="product"></param>
+        public void AddProduct(Product product)
+        {
+            _myContext.Products.Add(product);
+        }
+
+        /// <summary>
+        /// 保存更改
+        /// </summary>
+        /// <returns></returns>
+        public bool Save()
+        {
+            return _myContext.SaveChanges() >= 0;
+        }
+        public void DeleteProduct(Product product)
+        {
+            _myContext.Products.Remove(product);
         }
     }
 }

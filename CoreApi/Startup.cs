@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using CoreApi.Dtos;
 using CoreApi.Entities;
 using CoreApi.Repositories;
 using CoreApi.Services;
@@ -73,6 +74,16 @@ namespace CoreApi
 
             //对404等状态返回友好提示
             app.UseStatusCodePages();
+
+            //配置automapper
+            AutoMapper.Mapper.Initialize(cgf =>
+            {
+                cgf.CreateMap<Product, ProductWithoutMaterialDto>();
+                cgf.CreateMap<Product, ProductDto>();
+                cgf.CreateMap<Material, MaterialDto>();
+                cgf.CreateMap<ProductCreation, Product>();
+                cgf.CreateMap<ProductModification, Product>();
+            });
 
             app.UseMvc();
 
